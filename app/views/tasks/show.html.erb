@@ -1,0 +1,20 @@
+<div class="container">
+  <div><h1>• <%= @task_item.title %></h1></div>
+  <div class="container">
+    <div class="row justify-content-between">
+        <p><%= @task_item.details %></p>
+    </div>
+    <div class="row ">
+    </div>
+    <div class="none">
+    </div>
+    <%= form_with model: @new_task do |f| %>
+        <%= f.label :title, "Title:" %>
+        <%= f.text_field :title %>
+        <%= f.label :details, "Details:" %>
+        <%= f.text_field :details %>
+        <%= f.submit "Create task" %>
+    <% end %>
+  </div>
+<!-- end of container -->
+</div>

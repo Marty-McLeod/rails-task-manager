@@ -1,0 +1,16 @@
+<div class="container">
+  <div><h1>My tasks</h1></div>
+  <div class="container">
+    <div class="row justify-content-between">
+      <% @task_items.each do |list_item| %>
+        <p>• <%= link_to list_item.title, task_path(list_item) %></p>
+      <% end %>
+    </div>
+    <div class="row ">
+      <p><%= link_to "+ Create a new task", new_task_path %></p>
+    </div>
+    <div class="none">
+    </div>
+  </div>
+<!-- end of container -->
+</div>

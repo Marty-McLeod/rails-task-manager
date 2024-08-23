@@ -1,0 +1,18 @@
+<div class="container">
+  <div><h1>New task</h1></div>
+  <div class="container">
+    <div >
+      <%= form_with model: @new_task do |f| %>
+        <%= f.label :title, "Title:" %>
+        <%= f.text_field :title %>
+        <%= f.label :details, "Details:" %>
+        <%= f.text_field :details %>
+        <%= f.submit "Create task" %>
+      <% end %>
+    </div>
+    <div class="none">
+        <p><%= link_to "<- Return to task list", tasks_path %></p>
+    </div>
+  </div>
+<!-- end container -->
+</div>
