@@ -1,0 +1,13 @@
+<h1 class="mt-3">My tasks</h1>
+<!-- Displays all user tasks. Iterates over all task objects and displays in an unordered list
+    w/ checkbox -->
+<div class="container">
+    <ul class="list-group">
+        <% @tasks.each_with_index do |task, index| %>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" aria-label="checkbox-<%=index%>">
+                <%= task %>
+            </li>
+        <% end %>
+    </ul>
+</div>
