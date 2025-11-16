@@ -1,0 +1,8 @@
+<!-- Displays form so user can create a new task -->
+<div class="container">
+    <% page_name = new_task_path.split('/')[-1] %>
+    <h1 class="my-3"><%= page_name.capitalize() %> task</h1>
+
+    <!-- render task fields form here -->
+    <%= render "form", task: @task %>
+</div>

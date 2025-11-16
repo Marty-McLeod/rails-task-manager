@@ -1,0 +1,24 @@
+
+<!-- Displays all user tasks. Iterates over all task objects and displays in an unordered list
+    w/ checkbox -->
+<div class="container">
+    <h1 class="mt-3">My tasks</h1>
+
+    <ul class="list-group">
+        <% @tasks.each_with_index do |task, index| %>
+            <li class="list-group-item border border-0">
+                <% if task.completed %>
+                    <%= raw('<i class="fa-regular fa-square-check"></i>') %>
+                <% else %>
+                    <%= raw('<i class="fa-regular fa-square"></i>') %>
+                <% end %>
+                <%= link_to task.details, task_path(task.id), class: "text-decoration-none" %>
+                 • 
+                <%= link_to raw('<i class="fa-regular fa-trash-can"></i>'), task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                    class: "text-decoration-none fw-bold text-dark"  %>
+            </li>
+        <% end %>
+    </ul>
+    <hr>
+    <%= link_to "✚ Add a new task", new_task_path, class: "text-decoration-none" %>
+</div>

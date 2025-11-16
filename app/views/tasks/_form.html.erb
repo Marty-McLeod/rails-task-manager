@@ -1,0 +1,20 @@
+<!-- Reusable form for /new and /:id/edit -->
+<div class="row col-8">
+<%= form_with model: task do |field| %>
+    <%= field.label :title, class: "form-label"  %>
+    <%= field.text_field :title, class: "form-control" %>
+    <%= field.label :details, class: "form-label" %>
+    <%= field.text_field :details, class: "form-control form-control-lg" %>
+    <% if task.new_record? == false %>
+        <div class="form-check mt-3">
+            <%= field.label :completed, class: "form-label" %>
+            <%= field.check_box :completed, class: "form-check-input" %>
+        </div>
+        <% button_label = "Update task" %>
+    <% else %>
+        <% button_label = "Create task" %>
+    <% end %>
+    <%= field.submit "#{button_label}", class: "btn btn-primary my-3" %>
+<% end %>
+</div>
+<%= link_to "⬅ Back to task list", tasks_path, class: "text-decoration-none mt-3" %>

@@ -1,0 +1,17 @@
+<!-- Displays a single user task and status of 'completed' indicator checkbox -->
+<div class="container">
+    <div class="d-flex py-3 my-3 justify-content-between col-8">
+        <h1 class="text-start"><%= @task.title %></h1>
+        <a class="btn btn-primary align-content-center" href="<%= edit_task_path %>">Edit task</a>
+    </div>
+
+    
+    <div class="alert alert-secondary col-8" role="alert">
+        <p class="fw-medium"><%= @task.details %></p>
+    </div>
+    <div class="d-flex">
+        <input class="form-check-input me-1" type="checkbox" value="<%= @task.id %>" <%= "checked" if @task.completed %>>
+        <p><%= @task.completed? ? "This task is completed" : "This task is not completed yet" %></p>
+    </div>
+    <%= link_to "⬅ Back to task list", tasks_path, class: "text-decoration-none text-dark" %>
+</div>
